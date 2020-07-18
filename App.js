@@ -13,6 +13,7 @@ import HooksDemo from './src/main/HooksDemo';
 import LiftScreen from './src/liftdemo/LiftScreen';
 import ExecutionSequence from './src/liftdemo/ExecutionSequence';
 import PermissionDemo from './src/main/PermissionDemo';
+import ConfigDemo from './src/main/ConfigDemo';
 
 const Stack = createStackNavigator();
 
@@ -41,29 +42,33 @@ export default function App() {
           component={AlignSelfDemo}
           options={{ title: 'Align Self Demo', headerBackTitle: " " }}
         />
-         <Stack.Screen name="CustomModal"
+        <Stack.Screen name="CustomModal"
           component={CustomModal}
           options={{ title: 'Custom Modal', headerBackTitle: " " }}
         />
-         <Stack.Screen name="TimerStopwatch"
+        <Stack.Screen name="TimerStopwatch"
           component={TimerStopwatch}
           options={{ title: 'Timer Stopwatch', headerBackTitle: " " }}
         />
-       <Stack.Screen name="HooksDemo"
+        <Stack.Screen name="HooksDemo"
           component={HooksDemo}
           options={{ title: 'Hooks Demo', headerBackTitle: " " }}
         />
-         <Stack.Screen name="LiftScreen"
+        <Stack.Screen name="LiftScreen"
           component={LiftScreen}
           options={{ title: 'Lift', headerBackTitle: " " }}
         />
-         <Stack.Screen name="ExecutionSequence"
+        <Stack.Screen name="ExecutionSequence"
           component={ExecutionSequence}
           options={{ title: 'Lift Execution Sequence', headerBackTitle: " " }}
         />
-        <Stack.Screen name = "PermissionDemo"
-        component={PermissionDemo}
-        options ={{title: " Permission demo", headerBackTitle: " "}}/>
+        <Stack.Screen name="PermissionDemo"
+          component={PermissionDemo}
+          options={{ title: " Permission demo", headerBackTitle: " " }} />
+
+        <Stack.Screen name="ConfigDemo"
+          component={ConfigDemo}
+          options={{ title: " Configuration demo", headerBackTitle: " " }} />
       </Stack.Navigator>
     </NavigationContainer>
   );

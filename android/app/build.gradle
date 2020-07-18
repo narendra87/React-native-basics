@@ -76,7 +76,13 @@ import com.android.build.OutputFile
  *   extraPackagerArgs: []
  * ]
  */
-
+project.ext.envConfigFiles = [
+        debug: ".env",
+        release: ".env",
+        stagingrelease: ".env.staging",
+        productionrelease: ".env.production"
+]
+apply from: project(':react-native-config').projectDir.getPath() + "/dotenv.gradle"
 project.ext.react = [
     enableHermes: false,  // clean and rebuild if changing
 ]
@@ -161,6 +167,12 @@ android {
             signingConfig signingConfigs.debug
             minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
+        }
+        stagingrelease {
+            initWith release
+        }
+        productionrelease {
+            initWith release
         }
     }
 

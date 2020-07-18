@@ -60,6 +60,14 @@ export default function HomeScreen({ navigation }) {
                     }
                 />
             </View>
+            <View style={styles.buttonStyle}>
+                <Button
+                    title="Configuration Demo"
+                    onPress={() =>
+                        navigation.navigate("ConfigDemo")
+                    }
+                />
+            </View>
         </View>
     )
 }
